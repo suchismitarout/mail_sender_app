@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <form action="{{url_for('user.send_mail')}}" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.sender.label }}{{ form.sender }}<br>
+        {{ form.password.label }}{{ form.password }}<br>
+        {{ form.recipient.label }}{{ form.recipient }}<br>
+        {{ form.subject.label }}{{ form.subject }}<br>
+        {{ form.body.label }}{{ form.body }}<br>
+        {{ form.send() }}
+    </form>
+</div>
+
+{% endblock %}
